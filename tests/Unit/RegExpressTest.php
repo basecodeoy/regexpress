@@ -99,7 +99,7 @@ it('adds withAnyCase', function () {
 });
 
 it('adds stopAtFirst', function () {
-    expect(RegExpress::make()->stopAtFirst()->toRegExp())->toBe('/(?U)/');
+    expect(RegExpress::make()->stopAtFirst()->toRegExp())->toBe('/(?U-)/');
 });
 
 it('adds searchOneLine', function () {
