@@ -1,13 +1,12 @@
 {
     "name": "preemstudio/regexpress",
     "description": "A package to easily use regular expressions with PHP.",
+    "license": "MIT",
     "keywords": [
-        "PreemStudio",
+        "Preem Studio",
         "laravel",
         "regexpress"
     ],
-    "homepage": "https://github.com/preemstudio/regexpress",
-    "license": "MIT",
     "authors": [
         {
             "name": "Brian Faust",
@@ -15,14 +14,14 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/PreemStudio/regexpress",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "spatie/regex": "^3.1"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.2",
         "infection/infection": "^0.26.19",
-        "laravel/pint": "^1.0",
         "nunomaduro/collision": "^6.0",
         "nunomaduro/larastan": "^2.0",
         "orchestra/testbench": "^8.0",
@@ -32,8 +31,11 @@
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "preemstudio/laravel-jetpack": "^1.2",
+        "preemstudio/php-cs-fixer-config": "^1.3",
         "spatie/laravel-ray": "^1.2"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "PreemStudio\\RegExpress\\": "src"
@@ -44,13 +46,6 @@
             "Tests\\": "tests"
         }
     },
-    "scripts": {
-        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint --config vendor/preemstudio/laravel-jetpack/pint.json"
-    },
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true,
@@ -60,6 +55,11 @@
         },
         "sort-packages": true
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    }
 }
