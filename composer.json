@@ -21,6 +21,7 @@
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.2",
+        "friendsofphp/php-cs-fixer": "^3.16",
         "infection/infection": "^0.26.19",
         "nunomaduro/collision": "^6.0",
         "nunomaduro/larastan": "^2.0",

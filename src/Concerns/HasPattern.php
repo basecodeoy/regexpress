@@ -24,7 +24,7 @@ trait HasPattern
 
     public function then(string $value): static
     {
-        $this->pattern .= preg_quote($value, '/');
+        $this->pattern .= \preg_quote($value, '/');
 
         return $this;
     }
@@ -38,7 +38,7 @@ trait HasPattern
 
     public function maybe(string $value): static
     {
-        $this->pattern .= "(?:$value)?";
+        $this->pattern .= "(?:{$value})?";
 
         return $this;
     }
@@ -47,7 +47,7 @@ trait HasPattern
     {
         $this->pattern .= '|';
 
-        if (is_string($value)) {
+        if (\is_string($value)) {
             $this->pattern .= $value;
         }
 
@@ -63,7 +63,7 @@ trait HasPattern
 
     public function anythingBut(string $value): static
     {
-        $this->pattern .= "(?:[^$value]*)";
+        $this->pattern .= "(?:[^{$value}]*)";
 
         return $this;
     }
@@ -77,14 +77,14 @@ trait HasPattern
 
     public function somethingBut(string $value): static
     {
-        $this->pattern .= "(?:[^$value]+)";
+        $this->pattern .= "(?:[^{$value}]+)";
 
         return $this;
     }
 
     public function anyOf(string $characters): static
     {
-        $this->pattern .= "[$characters]";
+        $this->pattern .= "[{$characters}]";
 
         return $this;
     }
@@ -98,14 +98,14 @@ trait HasPattern
 
     public function not(string $value): static
     {
-        $this->pattern .= "(?!$value)";
+        $this->pattern .= "(?!{$value})";
 
         return $this;
     }
 
     public function range(int|string $from, int|string $to): static
     {
-        $this->pattern .= "[$from-$to]";
+        $this->pattern .= "[{$from}-{$to}]";
 
         return $this;
     }
@@ -133,35 +133,35 @@ trait HasPattern
 
     public function word(): static
     {
-        $this->pattern .= "\w";
+        $this->pattern .= '\\w';
 
         return $this;
     }
 
     public function digit(): static
     {
-        $this->pattern .= "\d";
+        $this->pattern .= '\\d';
 
         return $this;
     }
 
     public function whitespace(): static
     {
-        $this->pattern .= "\s";
+        $this->pattern .= '\\s';
 
         return $this;
     }
 
     public function addModifier(string $modifier): static
     {
-        $this->pattern .= "(?$modifier)";
+        $this->pattern .= "(?{$modifier})";
 
         return $this;
     }
 
     public function removeModifier(string $modifier): static
     {
-        $this->pattern .= "(?$modifier-)";
+        $this->pattern .= "(?{$modifier}-)";
 
         return $this;
     }
@@ -214,14 +214,14 @@ trait HasPattern
 
     public function atLeast(int $min): static
     {
-        $this->pattern .= sprintf('{%s,}', $min);
+        $this->pattern .= \sprintf('{%s,}', $min);
 
         return $this;
     }
 
     public function multiple(int $min, int $max): static
     {
-        $this->pattern .= sprintf('{%s,%s}', $min, $max);
+        $this->pattern .= \sprintf('{%s,%s}', $min, $max);
 
         return $this;
     }
