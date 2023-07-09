@@ -4,20 +4,6 @@
     </a>
 </p>
 
-<p align="center">
-    <a href="https://github.com/faustbrian/regexpress/actions">
-        <img src="https://badge.sh/github/check-runs/BombenProdukt/regexpress" alt="Checks" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/regexpress">
-        <img src="https://badge.sh/packagist/downloads/BombenProdukt/regexpress" alt="Downloads" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/regexpress">
-        <img src="https://badge.sh/packagist/version/BombenProdukt/regexpress" alt="Version" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/regexpress">
-        <img src="https://badge.sh/packagist/license/BombenProdukt/regexpress" alt="License" />
-    </a>
-</p>
 
 ## About RegExpress
 
