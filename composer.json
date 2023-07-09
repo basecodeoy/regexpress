@@ -14,7 +14,7 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/BombenProdukt/regexpress",
+    "homepage": "https://github.com/faustbrian/regexpress",
     "require": {
         "php": "^8.2",
         "spatie/regex": "^3.1"
