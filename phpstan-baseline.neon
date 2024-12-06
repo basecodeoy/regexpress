@@ -1,0 +1,21 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Cannot call method in\\(\\) on iterable\\<SplFileInfo\\>\\.$#"
+			count: 1
+			path: .php-cs-fixer.php
+
+		-
+			message: "#^Method BaseCodeOy\\\\RegEx\\\\RegEx\\:\\:replace\\(\\) has parameter \\$replacement with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RegEx.php
+
+		-
+			message: "#^Method BaseCodeOy\\\\RegEx\\\\RegEx\\:\\:replace\\(\\) has parameter \\$subject with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RegEx.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: tests/Pest.php
